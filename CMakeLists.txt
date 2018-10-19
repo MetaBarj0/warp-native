@@ -8,9 +8,19 @@ add_executable( warp-native
 target_compile_features( warp-native PUBLIC cxx_std_17 )
 
 add_library( message
-             STATIC 
+             SHARED 
              src/plugins/message.hpp
              src/plugins/message.cpp )
+
+# set_target_properties( message
+#                        PROPERTIES
+#                        CXX_VISIBILITY_PRESET hidden
+#                        VISIBILITY_INLINES_HIDDEN 1 )
+
+set_target_properties( message
+                       PROPERTIES
+                       CXX_VISIBILITY_PRESET default
+                       VISIBILITY_INLINES_HIDDEN 0 )
 
 target_compile_features( message PUBLIC cxx_std_17 )
 
