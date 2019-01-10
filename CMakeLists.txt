@@ -4,5 +4,6 @@ project( warp-native LANGUAGES CXX )
 
 include( src/CMakeLists.txt )
 include( src/plugins/CMakeLists.txt )
+include( tests/CMakeLists.txt )
 
 target_link_libraries( warp-native message )
