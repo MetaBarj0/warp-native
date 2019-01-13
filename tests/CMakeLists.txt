@@ -11,9 +11,9 @@ if( ${GIT_PROGRAM} STREQUAL "GIT_PROGRAM-NOTFOUND" )
            "Exiting..." )
 endif()
 
-execute_process( COMMAND git submodule deinit -f --all
+execute_process( COMMAND "${GIT_PROGRAM}" submodule deinit -f --all
                  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
-execute_process( COMMAND git submodule update --init --recursive
+execute_process( COMMAND "${GIT_PROGRAM}" submodule update --init --recursive
                  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( CATCH2_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Catch2/single_include" )
